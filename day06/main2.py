@@ -8,11 +8,7 @@ def get_values(t, d):
 
 
 def main():
-    result = 1
-    result *= get_values(53, 275)
-    result *= get_values(71, 1181)
-    result *= get_values(78, 1215)
-    result *= get_values(80, 1524)
+    result = get_values(53717880, 275118112151524)
 
     print(result)
 
