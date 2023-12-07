@@ -2,34 +2,48 @@ mapping = {
     "A": 12,
     "K": 11,
     "Q": 10,
-    "J": 9,
-    "T": 8,
-    "9": 7,
-    "8": 6,
-    "7": 5,
-    "6": 4,
-    "5": 3,
-    "4": 2,
-    "3": 1,
-    "2": 0,
+    "T": 9,
+    "9": 8,
+    "8": 7,
+    "7": 6,
+    "6": 5,
+    "5": 4,
+    "4": 3,
+    "3": 2,
+    "2": 1,
+    "J": 0,
 }
 
 
 def five_of_a_kind(cards: list[str]):
-    return cards[0] == cards[4]
+    n_jokers = cards.count("J")
+    return cards[0] == cards[4 - n_jokers]
 
 
 def four_of_a_kind(cards: list[str]):
-    return cards[0] == cards[3] or cards[1] == cards[4]
+    n_jokers = cards.count("J")
+    if n_jokers >= 3:
+        return True
+    return cards[0] == cards[3 - n_jokers] or cards[1] == cards[4 - n_jokers]
 
 
 def full_house(cards: list[str]):
+    n_jokers = cards.count("J")
+    if n_jokers == 2:
+        return cards[0] == cards[1] or cards[1] == cards[2]
+    if n_jokers == 1:
+        return cards[0] == cards[1] and cards[2] == cards[3]
     return (cards[0] == cards[2] and cards[3] == cards[4]) or (
         cards[0] == cards[1] and cards[2] == cards[4]
     )
 
 
 def three_of_a_kind(cards: list[str]):
+    n_jokers = cards.count("J")
+    if n_jokers == 2:
+        return True
+    if n_jokers == 1:
+        return cards[0] == cards[1] or cards[1] == cards[2] or cards[2] == cards[3]
     return cards[0] == cards[2] or cards[1] == cards[3] or cards[2] == cards[4]
 
 
@@ -42,6 +56,9 @@ def two_pair(cards: list[str]):
 
 
 def one_pair(cards: list[str]):
+    n_jokers = cards.count("J")
+    if n_jokers == 1:
+        return True
     return (
         cards[0] == cards[1]
         or cards[1] == cards[2]
