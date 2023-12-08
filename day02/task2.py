@@ -1,10 +1,10 @@
 def main():
     with open("./day02/input.txt") as f:
         sum = 0
-        for i, line in enumerate(f.readlines()):
+        for line in f.readlines():
             blue = green = red = 0
             colon_pos = line.find(":")
-            game = line[colon_pos + 2 :]
+            game = line[colon_pos + 2 :]  # noqa: E203
             rounds = list(map(lambda x: x.strip(" \n"), game.split(";")))
             for r in rounds:
                 colors = list(map(lambda x: x.strip(" \n"), r.split(",")))
