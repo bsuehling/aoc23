@@ -5,7 +5,7 @@ stringToInts = map (map read . words) . lines
 
 diffs :: [Int] -> [Int]
 diffs (a:b:t) = (b - a) : diffs (b : t)
-diffs x       = []
+diffs _       = []
 
 allZero :: [Int] -> Bool
 allZero = foldr (\h -> (&&) (h == 0)) True
