@@ -17,7 +17,7 @@ The problems are solved in the following languages:
 | 10  | Haskell |         |
 | 11  | Haskell | Haskell |
 | 12  | Haskell |         |
-| 13  |         |         |
+| 13  | Haskell | Haskell |
 | 14  |         |         |
 | 15  |         |         |
 | 16  |         |         |
