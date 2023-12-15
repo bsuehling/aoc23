@@ -18,8 +18,8 @@ The problems are solved in the following languages:
 | 11  | Haskell | Haskell |
 | 12  | Haskell |         |
 | 13  | Haskell | Haskell |
-| 14  |         |         |
-| 15  |         |         |
+| 14  | Haskell | Haskell |
+| 15  | Haskell | Haskell |
 | 16  |         |         |
 | 17  |         |         |
 | 18  |         |         |
